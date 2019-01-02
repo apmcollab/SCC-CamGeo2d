@@ -6,7 +6,7 @@ SHELL=/bin/sh
 
 # Location of SCC source files and Makescripts files
 
-SCC_Dir=../SCC
+SCC_Dir=../
 MAKESCRIPTS_Dir=$(SCC_Dir)/MakeScripts
 
 # Use BaseCommonConfig.mk if it exists, otherwise use BaseCommonConfig_Default.mk 
