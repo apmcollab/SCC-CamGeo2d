@@ -6,8 +6,9 @@ The CamGeo2d classes are used to represent different types of two-dimensional ob
 ### Prerequisites/Dependencies
 C++11
 SCC/CppGraphics for graphics output
+
 ### Versioning
-Release : 19.01.04
+Release : 19.12.16
 ### Authors
 Chris Anderson
 ### License
