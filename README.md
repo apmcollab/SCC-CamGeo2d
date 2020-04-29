@@ -5,13 +5,15 @@ The CamGeo2d classes are used to represent different types of two-dimensional ob
 
 ### Prerequisites/Dependencies
 C++11
-SCC/CppGraphics for graphics output 
+SCC/CppGraphics for graphics output
+
 ### Versioning
-Release : 19.01.02
+Release : 19.12.16
 ### Authors
 Chris Anderson
 ### License
 GPLv3  For a copy of the GNU General Public License see <http://www.gnu.org/licenses/>.
 ### Acknowledgements
+
 
 
