@@ -40,7 +40,6 @@
 #include <iostream>
 using namespace std;
 
-#ifndef __BCPLUSPLUS__
 void CAMgeoExit()
 {
 	cerr << " Fatal Error : Program Stopped " << endl;
@@ -52,36 +51,5 @@ void CAMgeoExit(char* ErrorMessage)
 	cerr << " Fatal Error " << endl;
 	exit(1);
 };
-#else
-void CAMgeoExit()
-{
-    cerr << endl << endl;
-    cerr << "Hit return to Exit " << endl << endl;
-    getchar();
-	throw CAMgeoException("Error In CAM geometric entity Classes");
-};
-void CAMgeoExit(char* ErrorMessage)
-{
-	 throw CAMgeoException(ErrorMessage);
-};
-CAMgeoException::CAMgeoException()
-{
-	errorMessage = new char[1];
-	errorMessage[0] = '\0';
-}
-CAMgeoException::CAMgeoException(char* Emessage)
-{
-    errorMessage = new char[strlen(Emessage) + 1];
-    strcpy(errorMessage, Emessage);
-}
-CAMgeoException::CAMgeoException(const CAMgeoException& C)
-{
-    errorMessage = new char[strlen(C.errorMessage) + 1];
-    strcpy(errorMessage, C.errorMessage);
-}
-CAMgeoException::~CAMgeoException()
-{
-    delete [] errorMessage;
-}
-#endif
+
  

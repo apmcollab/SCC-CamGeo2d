@@ -12,6 +12,18 @@
 #include <sstream>
 using namespace std;
 
+
+//
+// strcpy_s is not implemented as part of C++11 (arrgh) so this macro
+// inserts strcpy calls.
+//
+
+#ifdef _MSC_VER
+#define COPYSTR(dst,count,src) strcpy_s(dst,count,src)
+#else
+#define COPYSTR(dst,count,src) strcpy(dst,src)
+#endif
+
 #define   _CAMentityChunkSize_  7
 //
 //******************************************************************************
@@ -87,7 +99,8 @@ CAMcombinedEntity::CAMcombinedEntity( const CAMcombinedEntity& A)
 	entityListPtr[i]->initializeReferenceCount();
 
 	entityNameListPtr[i] = new char[strlen(A.entityNameListPtr[i]) + 1];
-	strcpy(entityNameListPtr[i],A.entityNameListPtr[i]);
+	//strcpy(entityNameListPtr[i],A.entityNameListPtr[i]);
+	COPYSTR(entityNameListPtr[i],strlen(A.entityNameListPtr[i]) + 1,A.entityNameListPtr[i]);
 	}
 
     ceReferenceCount    = 0;
@@ -168,7 +181,8 @@ void CAMcombinedEntity::initialize( const CAMcombinedEntity& A)
 	entityListPtr[i]->initializeReferenceCount();
 
 	entityNameListPtr[i] = new char[strlen(A.entityNameListPtr[i]) + 1];
-	strcpy(entityNameListPtr[i],A.entityNameListPtr[i]);
+	//strcpy(entityNameListPtr[i],A.entityNameListPtr[i]);
+	COPYSTR(entityNameListPtr[i],strlen(A.entityNameListPtr[i]) + 1,A.entityNameListPtr[i]);
 	}
 
 	ceReferenceCount    = 0;
@@ -249,7 +263,8 @@ CAMcombinedEntity&  CAMcombinedEntity::operator =( const CAMcombinedEntity& A)
 	entityListPtr[i]->initializeReferenceCount();
 
 	entityNameListPtr[i] = new char[strlen(A.entityNameListPtr[i]) + 1];
-	strcpy(entityNameListPtr[i],A.entityNameListPtr[i]);
+	//strcpy(entityNameListPtr[i],A.entityNameListPtr[i]);
+	COPYSTR(entityNameListPtr[i],strlen(A.entityNameListPtr[i]) + 1,A.entityNameListPtr[i]);
 	}
 
     return *this;
@@ -386,7 +401,8 @@ void  CAMcombinedEntity::addEntity(const CAMgeometricEntity& E)
     outs << EtypePtr << " " << typeCount;
     nameSize         = long((outs.str()).size()) + 1;
 	char* entityName = new char[nameSize];
-    strcpy(entityName,(outs.str()).c_str());
+    //strcpy(entityName,(outs.str()).c_str());
+    COPYSTR(entityName,nameSize,(outs.str()).c_str());
     //
     //
 
@@ -405,7 +421,8 @@ void  CAMcombinedEntity::addEntity(const char* entityName, const CAMgeometricEnt
 	long nameSize = (long)strlen(entityName);
 	nameSize++;
 	char* newEntityName = new char[nameSize];
-	strcpy(newEntityName,entityName);
+	//strcpy(newEntityName,entityName);
+	COPYSTR(newEntityName,nameSize,entityName);
 //
 //
 	entityListPtr[entityCount - 1] = E.newDuplicateEntity();
@@ -459,7 +476,8 @@ void  CAMcombinedEntity::setIndexName(long index, char* newName)
 
 	delete [] entityNameListPtr[index - entityIndexBase];
 	entityNameListPtr[index - entityIndexBase] = new char[strlen(newName) + 1];
-	strcpy(entityNameListPtr[index - entityIndexBase],newName);
+	//strcpy(entityNameListPtr[index - entityIndexBase],newName);
+	COPYSTR(entityNameListPtr[index - entityIndexBase],strlen(newName) + 1,newName);
 }
 void  CAMcombinedEntity::expandList()
 {
