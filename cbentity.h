@@ -36,7 +36,7 @@
 #############################################################################
 */
 #include <cstring>
-using namespace std;
+
 
 #ifndef __CAM_CHAR_PTR_HANDLE__
 #define __CAM_CHAR_PTR_HANDLE__
@@ -71,7 +71,6 @@ public :
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 #include "entity.h"
 #include "camgeoimpexp.h"
@@ -107,8 +106,8 @@ public :
 //
 //  Output 
 //
-    __IMPEXP__ friend ostream&   operator <<(ostream& out_stream, const CAMcombinedEntity& A);
-    __IMPEXP__ friend istream&   operator >>(istream& in_stream, CAMcombinedEntity& A);
+    __IMPEXP__ friend std::ostream&   operator <<(std::ostream& out_stream, const CAMcombinedEntity& A);
+    __IMPEXP__ friend std::istream&   operator >>(std::istream& in_stream, CAMcombinedEntity& A);
     
     const char*  getEntityType() const {return "CAMcombinedEntity";};
     
@@ -164,7 +163,7 @@ public :
     void  setReferenceCount(long refValue){ceReferenceCount = refValue;};
     static void  referenceCountError()
 {
-cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler " << endl;
+std::cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler " << std::endl;
 CAMgeoExit();
 };
 

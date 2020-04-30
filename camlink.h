@@ -35,7 +35,6 @@
 */
 
 #include <cstring>
-using namespace std;
 
 #include "camgeoimpexp.h"
 

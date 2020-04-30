@@ -207,7 +207,7 @@ void CAMellipseEntity::getConstructorData(double* D, long* L, char*)  const
 //                    INPUT/OUTPUT
 //******************************************************************************
 //
-void  CAMellipseEntity::output(ostream& out_stream) const
+void  CAMellipseEntity::output(std::ostream& out_stream) const
 {
    out_stream << "[BEGIN_ENTITY]\n";
    out_stream <<  getEntityType() << "\n";
@@ -218,7 +218,7 @@ void  CAMellipseEntity::output(ostream& out_stream) const
    out_stream << orientation << '\n';
    out_stream << "[END_ENTITY]\n";
 }
-ostream&  operator <<(ostream& out_stream, const CAMellipseEntity& A)
+ostream&  operator <<(std::ostream& out_stream, const CAMellipseEntity& A)
 {
 	 A.output(out_stream);
     return(out_stream);
@@ -238,7 +238,7 @@ void  CAMellipseEntity::input(istream& in_stream)
     inputData(in_stream);
 }
 
-void  CAMellipseEntity::inputData(istream& in_stream)
+void  CAMellipseEntity::inputData(std::istream& in_stream)
 {
 	 char lineInput[256];
     in_stream >> lineInput;

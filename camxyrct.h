@@ -74,12 +74,12 @@ public :
 //
 //  output functions
 //
-    __IMPEXP__ friend ostream&  operator <<(ostream& out_stream, const CAMxyRectangleEntity& A);
-    void  output(ostream& out_stream) const;
+    __IMPEXP__ friend std::ostream&  operator <<(std::ostream& out_stream, const CAMxyRectangleEntity& A);
+    void  output(std::ostream& out_stream) const;
 
-    __IMPEXP__ friend istream&  operator >>(istream& in_stream, CAMxyRectangleEntity& A);
-    void input(istream&);
-    void inputData(istream&);
+    __IMPEXP__ friend std::istream&  operator >>(std::istream& in_stream, CAMxyRectangleEntity& A);
+    void input(std::istream&);
+    void inputData(std::istream&);
 
     const char*	  getEntityType() const {return "CAMxyRectangleEntity";};
     int	  interiorExteriorTest(double xTest, double yTest) const;

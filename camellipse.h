@@ -37,7 +37,7 @@
 
 #include "camgeoimpexp.h"
 #include "entity.h"
-using namespace std;
+
 
 #ifndef __CAM_ELLIPSE_ENTITY__
 #define __CAM_ELLIPSE_ENTITY__
@@ -75,12 +75,12 @@ public :
 //
 //  output/input  functions
 //
-    __IMPEXP__ friend ostream&  operator <<(ostream& out_stream, const CAMellipseEntity& A);
-    void  output(ostream& out_stream) const;
+    __IMPEXP__ friend std::ostream&  operator <<(std::ostream& out_stream, const CAMellipseEntity& A);
+    void  output(std::ostream& out_stream) const;
 
-    __IMPEXP__ friend istream&  operator >>(istream& in_stream, CAMellipseEntity& A);
-    void input(istream&);
-    void inputData(istream&);
+    __IMPEXP__ friend std::istream&  operator >>(std::istream& in_stream, CAMellipseEntity& A);
+    void input(std::istream&);
+    void inputData(std::istream&);
 
     const char*  getEntityType() const {return "CAMellipseEntity";};
 

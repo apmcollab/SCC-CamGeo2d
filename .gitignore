@@ -2,3 +2,6 @@
 *.o
 _release*
 _debug*
+build
+build64
+.DS*

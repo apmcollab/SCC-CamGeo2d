@@ -41,7 +41,6 @@
 
 #include "camgeoimpexp.h"
 #include "entity.h"
-using namespace std;
 
 #ifndef __CAM_POLYGON_ENTITY__
 #define __CAM_POLYGON_ENTITY__
@@ -88,12 +87,12 @@ public :
 //
 //  input/output functions
 //
-    __IMPEXP__ friend     ostream&  operator <<(ostream& out_stream, const CAMpolygonEntity& A);
-    void       output(ostream& out_stream) const;
+    __IMPEXP__ friend     std::ostream&  operator <<(std::ostream& out_stream, const CAMpolygonEntity& A);
+    void       output(std::ostream& out_stream) const;
 
-    __IMPEXP__ friend istream&  operator >>(istream& in_stream, CAMpolygonEntity& A);
-    void input(istream&);
-    void inputData(istream&);
+    __IMPEXP__ friend std::istream&  operator >>(std::istream& in_stream, CAMpolygonEntity& A);
+    void input(std::istream&);
+    void inputData(std::istream&);
 
     const char*	   getEntityType() const {return "CAMpolygonEntity";};
     int	       interiorExteriorTest(double xTest, double yTest) const;

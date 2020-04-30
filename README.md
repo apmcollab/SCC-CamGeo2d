@@ -8,7 +8,9 @@ C++11
 SCC/CppGraphics for graphics output
 
 ### Versioning
-Release : 19.12.16
+Release : 1.0.1
+### Date 
+April, 30, 2020
 ### Authors
 Chris Anderson
 ### License

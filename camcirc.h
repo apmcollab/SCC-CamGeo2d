@@ -33,8 +33,6 @@
 #############################################################################
 */
 #include <cstring>
-using namespace std;
-
 #include "entity.h"
 #include "camgeoimpexp.h"
 
@@ -72,12 +70,12 @@ public :
 //
 //  output/input  functions
 //
-    __IMPEXP__ friend ostream&  operator <<(ostream& out_stream, const CAMcircleEntity& A);
-    void  output(ostream& out_stream) const;
+    __IMPEXP__ friend std::ostream&  operator <<(std::ostream& out_stream, const CAMcircleEntity& A);
+    void  output(std::ostream& out_stream) const;
 
-    __IMPEXP__ friend istream&  operator >>(istream& in_stream, CAMcircleEntity& A);
-    void input(istream&);
-    void inputData(istream&);
+    __IMPEXP__ friend std::istream&  operator >>(std::istream& in_stream, CAMcircleEntity& A);
+    void input(std::istream&);
+    void inputData(std::istream&);
 
     const char*  getEntityType() const {return "CAMcircleEntity";};
 

@@ -217,7 +217,7 @@ void CAMcircleEntity::getConstructorData(double* D, long* L, char*)  const
 //                    INPUT/OUTPUT
 //******************************************************************************
 //
-void  CAMcircleEntity::output(ostream& out_stream) const
+void  CAMcircleEntity::output(std::ostream& out_stream) const
 {
 	out_stream << "[BEGIN_ENTITY]\n";
    out_stream <<  getEntityType() << "\n";
@@ -227,19 +227,19 @@ void  CAMcircleEntity::output(ostream& out_stream) const
    out_stream << orientation << '\n';
    out_stream << "[END_ENTITY]\n";
 }
-ostream&  operator <<(ostream& out_stream, const CAMcircleEntity& A)
+std::ostream&  operator <<(std::ostream& out_stream, const CAMcircleEntity& A)
 {
 	 A.output(out_stream);
     return(out_stream);
 }
 
-istream&  operator >>(istream& in_stream, CAMcircleEntity& A)
+std::istream&  operator >>(std::istream& in_stream, CAMcircleEntity& A)
 {
 	 A.input(in_stream);
     return(in_stream);
 }
 
-void  CAMcircleEntity::input(istream& in_stream)
+void  CAMcircleEntity::input(std::istream& in_stream)
 {
 	 char lineInput[256];
     in_stream >> lineInput;
@@ -247,7 +247,7 @@ void  CAMcircleEntity::input(istream& in_stream)
     inputData(in_stream);
 }
 
-void  CAMcircleEntity::inputData(istream& in_stream)
+void  CAMcircleEntity::inputData(std::istream& in_stream)
 {
 	 char lineInput[256];
     in_stream >> lineInput;
@@ -523,8 +523,8 @@ double	  CAMcircleEntity::getXcoordinate(double s) const
 */
 {
 	if((s > radius*2.0*CAM_PI)||(s < 0))
-	{cerr << "Error : getXCoordinate argument out of range "
-		  << endl; exit(1);}
+	{std::cerr << "Error : getXCoordinate argument out of range "
+		  << std::endl; exit(1);}
 	return center_x + radius*(cos((s/radius) + start_theta));
 }
 
@@ -537,8 +537,8 @@ double	  CAMcircleEntity::getYcoordinate(double s) const
 */
 {
 	if((s > radius*2.0*CAM_PI)||(s < 0))
-	{cerr << "Error : getYCoordinate argument out of range "
-		  << endl; exit(1);}
+	{std::cerr << "Error : getYCoordinate argument out of range "
+		  << std::endl; exit(1);}
 	return center_y + radius*(sin((s/radius) + start_theta));
 }
 
@@ -640,8 +640,8 @@ void  CAMcircleEntity::getUnitNormal(double s, double& n_x, double& n_y) const
 */
 {
 	if((s > radius*2.0*CAM_PI)||(s < 0))
-	{cerr << "Error : getUnitNormal parametric argument out of range "
-		  << endl; exit(1);}
+	{std::cerr << "Error : getUnitNormal parametric argument out of range "
+		  <<std:: endl; exit(1);}
 
 	n_x = cos((s/radius) + start_theta);
 	n_y = sin((s/radius) + start_theta);
@@ -656,8 +656,8 @@ void  CAMcircleEntity::getUnitTangent(double s, double& t_x, double& t_y) const
 */
 {
 	if((s > radius*2.0*CAM_PI)||(s < 0))
-	{cerr << "Error : getUnitTangent parametric argument out of range "
-		  << endl; exit(1);}
+	{std::cerr << "Error : getUnitTangent parametric argument out of range "
+		  << std::endl; exit(1);}
 
 	t_x = -sin((s/radius) + start_theta);
 	t_y =  cos((s/radius) + start_theta);

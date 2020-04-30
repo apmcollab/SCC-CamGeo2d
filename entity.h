@@ -36,7 +36,6 @@
 #############################################################################
 */
 #include <iostream>
-using namespace std;
 
 
 #include "geoexit.h"
@@ -77,20 +76,19 @@ public :
     void  setReferenceCount(int refValue){geoReferenceCount = refValue;};
     static void  referenceCountError()
 {
-cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler "
-<< endl; CAMgeoExit();
+std::cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler " << std::endl; CAMgeoExit();
 };
 //
 //  output functions
 //
-    friend ostream&  operator <<(ostream& out_stream, const CAMgeometricEntity& A)
+    friend std::ostream&  operator <<(std::ostream& out_stream, const CAMgeometricEntity& A)
     {A.output(out_stream);return out_stream;};
-    virtual void  output(ostream&) const {};
+    virtual void  output(std::ostream&) const {};
 
-    friend istream&  operator >>(istream& in_stream, CAMgeometricEntity& A)
+    friend std::istream&  operator >>(std::istream& in_stream, CAMgeometricEntity& A)
     {A.input(in_stream);return in_stream;};
     
-    virtual void input(istream&) {};
+    virtual void input(std::istream&) {};
 
 //
 //  Geometric Entity Member Functions
@@ -142,7 +140,7 @@ cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler "
 //
     static void  parametricCoordinateError()
 {
-cerr << " Error : getParametricCoordinate arguments not on entity " <<endl;
+std::cerr << " Error : getParametricCoordinate arguments not on entity " << std::endl;
 CAMgeoExit();
 };
 
