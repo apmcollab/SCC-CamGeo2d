@@ -40,8 +40,8 @@
 #include "camgeoimpexp.h"
 #include "entity.h"
 
-#ifndef __CAM_XYRECTANGLE_ENTITY__
-#define __CAM_XYRECTANGLE_ENTITY__
+#ifndef CAM_XYRECTANGLE_ENTITY__
+#define CAM_XYRECTANGLE_ENTITY__
 
 class __IMPEXP__ CAMxyRectangleEntity : public CAMgeometricEntity
 {

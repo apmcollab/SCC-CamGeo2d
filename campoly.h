@@ -42,8 +42,8 @@
 #include "camgeoimpexp.h"
 #include "entity.h"
 
-#ifndef __CAM_POLYGON_ENTITY__
-#define __CAM_POLYGON_ENTITY__
+#ifndef CAM_POLYGON_ENTITY__
+#define CAM_POLYGON_ENTITY__
 
 class __IMPEXP__ CAMpolygonEntity : public CAMgeometricEntity
 {

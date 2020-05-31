@@ -38,8 +38,8 @@
 
 #include "camgeoimpexp.h"
 
-#ifndef __CAM_LINK__
-#define __CAM_LINK__
+#ifndef CAM_LINK__
+#define CAM_LINK__
 
 class __IMPEXP__ CAMlink
 {

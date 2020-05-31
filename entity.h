@@ -41,8 +41,8 @@
 #include "geoexit.h"
 #include "camgeoimpexp.h"
 
-#ifndef __CAMGEOENTITY__
-#define __CAMGEOENTITY__
+#ifndef CAMGEOENTITY__
+#define CAMGEOENTITY__
 
 class __IMPEXP__ CAMgeometricEntity
 {

@@ -38,8 +38,8 @@
 #
 #############################################################################
 */
-#ifndef __CAM_ENTITY_GRAPHICS__
-#define __CAM_ENTITY_GRAPHICS__
+#ifndef CAM_ENTITY_GRAPHICS__
+#define CAM_ENTITY_GRAPHICS__
 class __IMPEXP__ CAMentityGraphics : public CAMgraphicsProcess
 {
 public :

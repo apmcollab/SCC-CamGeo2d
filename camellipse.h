@@ -39,8 +39,8 @@
 #include "entity.h"
 
 
-#ifndef __CAM_ELLIPSE_ENTITY__
-#define __CAM_ELLIPSE_ENTITY__
+#ifndef CAM_ELLIPSE_ENTITY__
+#define CAM_ELLIPSE_ENTITY__
 
 class __IMPEXP__ CAMellipseEntity : public CAMgeometricEntity
 {

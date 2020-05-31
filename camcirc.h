@@ -36,8 +36,8 @@
 #include "entity.h"
 #include "camgeoimpexp.h"
 
-#ifndef __CAM_CIRCLE_ENTITY__
-#define __CAM_CIRCLE_ENTITY__
+#ifndef CAM_CIRCLE_ENTITY__
+#define CAM_CIRCLE_ENTITY__
 
 class __IMPEXP__ CAMcircleEntity : public CAMgeometricEntity
 {

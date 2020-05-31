@@ -34,8 +34,8 @@
 */
 #include "camgeoimpexp.h"
 
-#ifndef __CAMGEOEXIT__
-#define __CAMGEOEXIT__
+#ifndef CAMGEOEXIT__
+#define CAMGEOEXIT__
 
 void __IMPEXP__ CAMgeoExit();
 void __IMPEXP__ CAMgeoExit(char* ErrorMessage);

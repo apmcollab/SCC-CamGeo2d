@@ -38,8 +38,8 @@
 #include <cstring>
 
 
-#ifndef __CAM_CHAR_PTR_HANDLE__
-#define __CAM_CHAR_PTR_HANDLE__
+#ifndef CAM_CHAR_PTR_HANDLE__
+#define CAM_CHAR_PTR_HANDLE__
 
 
 class CAMcharPtrHandle
@@ -66,8 +66,8 @@ public :
 //********************************************************************************
 //
 
-#ifndef __CAM_COMBINED_ENTITY__
-#define __CAM_COMBINED_ENTITY__
+#ifndef CAM_COMBINED_ENTITY__
+#define CAM_COMBINED_ENTITY__
 
 #include <iostream>
 #include <string>
