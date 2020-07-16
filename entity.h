@@ -106,8 +106,8 @@ std::cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler "
     virtual double  getMinY() const {return 0.0;};
     virtual double  getMaxY() const {return 0.0;};
     virtual double  getTotalArcLength() const {return 0.0;};
-    virtual int  getParametricCoordinate(double& coordinate, double, double) const {return 0;};
-    virtual int  getParametricCoordinate(double& coordinate, double, double, double, double) const {return 0;};
+    virtual int  getParametricCoordinate(double& /* coordinate */, double, double) const {return 0;};
+    virtual int  getParametricCoordinate(double& /* coordinate */, double, double, double, double) const {return 0;};
     virtual double  getXcoordinate(double) const {return 0.0;};
     virtual double  getYcoordinate(double) const {return 0.0;};
     virtual int  getInteriorPoint(double& x, double& y) const {x = 0.0; y = 0.0; return 0;};
@@ -118,7 +118,7 @@ std::cerr << " Cannot Use Reference Counting on Objects New\'d by the Compiler "
     virtual void  getUnitNormal(double, double& n_x, double& n_y) const {n_x =0.0; n_y = 0.0;};
     virtual void  getUnitTangent(double, double& t_x, double& t_y) const {t_x =0.0; t_y = 0.0;};
 
-	virtual double  getDistanceToBoundary(double x, double y) const {return 0.0;};
+	virtual double  getDistanceToBoundary(double /* x */, double /* y */) const {return 0.0;};
 //
 //  Initialization
 //
